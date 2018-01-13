@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>root@wedding</title>
+  <script>
+    function getQueryStrings() {
+      var assoc = {};
+      var decode = function(s) {
+        return decodeURIComponent(s.replace(/\+/g, " "));
+      };
+      var queryString = location.search.substring(1);
+      var keyValues = queryString.split('&');
+
+      for (var i in keyValues) {
+        var key = keyValues[i].split('=');
+        if (key.length > 1) {
+          assoc[decode(key[0])] = decode(key[1]);
+        }
+      }
+      return assoc;
+    }
+  </script>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .box {
+      outline: 1px dashed #98abb9;
+      outline-offset: -5px;
+      background: ghostwhite;
+      width: auto;
+      height: 80vh;
+      padding: 30px 50px;
+      text-align: center;
+      text-justify: auto;
+      margin: 0 auto;
+      font-family: 'Lato', sans-serif;
+      line-height: 5px;
+      display: inline-block;
+    }
+
+    .effect {
+      position: relative;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+
+    .effect:before,
+    .effect:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      top: 50%;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      border-radius: 100px / 10px;
+    }
+
+    .box p {
+      color: #2E2E2E;
+    }
+
+    #defaulttext {
+      font-size: 7vh;
+    }
+
+    #girl {
+      color: #FF6699;
+      text-shadow: rgba(46, 46, 46, 0.35) 0px 4px 8px;
+    }
+
+    #name {
+      font-size: 9vh;
+      color: white;
+      text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+    }
+
+    #myguys {
+      font-size: 8vh;
+      color: #47B0DB;
+      text-decoration: underline;
+      text-shadow: rgba(46, 46, 46, 0.71) 0px 4px 8px;
+    }
+
+    #willyoube {
+      font-size: 3vh;
+    }
+
+    #groomsman {
+      font-size: 8vh;
+      font-family: 'Engagement';
+      font-style: italic;
+      text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box effect">
+    <p id="name">
+      <span id='man'>YOU</span>
+    </p>
+    <br>
+    <p id="defaulttext">I'VE GOT</p>
+    <p id="defaulttext">THE
+      <strong id="girl">GIRL</strong>
+    </p>
+    <p id="defaulttext">BUT I NEED</p>
+    <p id="defaulttext" </p>
+      <p id="myguys">
+        <strong>MY GUYS</strong>
+      </p>
+      <br>
+      <p id="willyoube">Will you be my</p>
+      <p id="groomsman">Groomsman?</p>
+  </div>
+  <script>
+    var qs = getQueryStrings();
+    var myParam = qs["man"];
+    if (myParam && (myParam === 'Benoît' || myParam === 'Simon' || myParam === 'Balázs')) {
+      var elt = document.getElementById('man');
+      elt.removeChild(elt.firstChild);
+      elt.appendChild(document.createTextNode(myParam.toUpperCase()));
+    } else {
+      document.body.innerHTML = "<p>You are not supposed to come here.</p><p>Only 3 people have been chosen to be my groomsmen.</p>"
+    }
+  </script>
+</body>
+
+</html>
