@@ -7,10 +7,12 @@ They all live in a different country and I used that at my advantage. By executi
 
 ----------
 How it looks at first:
+
 ![How it looks at first](https://i.imgur.com/n5WCnZ4.png)
 
 
 ----------
 How it looks when you get asked to be a groomsman:
+
 ![How it looks when you get asked to be a groomsman](https://i.imgur.com/ofJUAym.png)
 
