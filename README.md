@@ -4,7 +4,7 @@ This is a small website that behaves like an Ubuntu terminal emulator. I sent th
 
 They all live in a different country and I used that at my advantage. By executing the `wedding groomsmen` command, the terminal detected their IP and could guess who was using the website. The terminal then added a more personal touch by addressing them by their first name and asking them to become a witness.
 
-You can try it for yourself at https://terminal.borson.fr
+You can try it for yourself [here](http://terminal.borson.fr)
 
 ----------
 How it looks at first:
